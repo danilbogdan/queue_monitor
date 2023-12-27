@@ -85,7 +85,7 @@ def check_queue():
         'region[name]': 'ВРОЦЛАВ',
         'org[id]': '2042',
         'org[name]': 'Паспортний сервіс в м.Вроцлав',
-        'org[address]': 'Tarczyński Arena, aleja Śląska 1, 54-118 Wrocław'
+        'org[address]': 'plac Grunwaldzki 22, 50-363 Wrocław'
     })
 
     captch = s.resolve_captcha()
