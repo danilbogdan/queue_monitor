@@ -14,7 +14,7 @@ from tgbot import bot, clear_keyboard
 
 url = settings.QUEUE_SITE
 
-solver = TwoCaptcha(TWO_CAPTCHA_API_KEY)
+solver = TwoCaptcha(settings.TWO_CAPTCHA_API_KEY)
 
 PHPSESSID = api.get_session_id()
 headers = api.get_headers()
@@ -117,15 +117,15 @@ if __name__ == '__main__':
                 available_date = check_queue()
                 if not available_date:
                     raise Exception('No date available for today')
-                bot.send_message(CHAT_ID,
+                bot.send_message(settings.CHAT_ID,
                                  text='Hello. I will help you to catch up slot in the queue!',
                                  reply_markup=clear_keyboard())
             except Exception as e:
-                bot.send_message(CHAT_ID,
+                bot.send_message(settings.CHAT_ID,
                                  text=f"Can't get place in queue: {str(e)}",
                                  reply_markup=clear_keyboard())
 
-            bot.send_message(CHAT_ID,
+            bot.send_message(settings.CHAT_ID,
                              text=f"Sleep for {CHECK_EVERY_N_MIN} until the next attempt...",
                              reply_markup=clear_keyboard())
         else:
