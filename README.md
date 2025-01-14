@@ -1,4 +1,4 @@
-Telegram bot that helps to catch free slot in the Queue
+Telegram bot that helps to catch free slot in DP Document`s queue
 
 1. Install requirements
 ```
